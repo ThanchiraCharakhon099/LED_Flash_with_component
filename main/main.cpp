@@ -2,7 +2,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "LED.h"
-//65030099 THANCHIRA
+
 LED led1(16); 
 LED led2(17); 
 LED led3(5); 
@@ -16,12 +16,20 @@ LED leds[] = {led1, led2, led3, led4, led5, led6, led7, led8};
 
 extern "C" void app_main(void)
 {
-    int i = 0;
+    int left_index = 0;
+    int right_index = 7;
+
     while(1)
     {        
-        leds[i].ON();
-        vTaskDelay(500/portTICK_PERIOD_MS);
-        leds[i].OFF();
-        if(i++ >= 7) i = 0;
+        leds[left_index].ON();
+        leds[right_index].ON();
+        
+        vTaskDelay(500 / portTICK_PERIOD_MS);
+
+        leds[left_index].OFF();
+        leds[right_index].OFF();
+
+        if(++left_index > 3) left_index = 0;
+        if(--right_index < 4) right_index = 7;
     }
 }
