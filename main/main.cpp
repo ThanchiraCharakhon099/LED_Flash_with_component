@@ -2,7 +2,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "LED.h"
-
+//65030099 THANCHIRA
 LED led1(16); 
 LED led2(17); 
 LED led3(5); 
@@ -20,7 +20,7 @@ extern "C" void app_main(void)
     while(1)
     {        
         leds[i].ON();
-        vTaskDelay(100/portTICK_PERIOD_MS);
+        vTaskDelay(500/portTICK_PERIOD_MS);
         leds[i].OFF();
         if(i++ >= 7) i = 0;
     }
