@@ -1,0 +1,16 @@
+dependencies:
+  LED:
+    component_hash: f0b813ad0cc12447bf0ad655b28e4c0726a3bd655b40360a770ef8b750e70e67
+    source:
+      git: https://github.com/ThanchiraCharakhon099/LED-Test.git
+      path: components/LED
+      type: git
+    version: 1499dc068f925c395e9ddeefedae3a42d1e50ccc
+  idf:
+    component_hash: null
+    source:
+      type: idf
+    version: 5.2.2
+manifest_hash: b3a00cea54213c8cfa92fdc5bd095eb5f1a89b171aa6a2bd294125633f72c4aa
+target: esp32
+version: 1.0.0
